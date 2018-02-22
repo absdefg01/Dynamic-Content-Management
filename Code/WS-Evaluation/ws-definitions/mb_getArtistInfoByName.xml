@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ws>
+	<prefix name="w" value="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+	<prefix name="y" value="http://mpii.de/yago/resource/"/>
+    <headVariables>
+        <variable type="inout" name="?artistName"/>
+        <variable type="output" name="?artistId"/>
+        <variable type="output" name="?beginDate"/>
+        <variable type="output" name="?endDate"/>
+    </headVariables>
+    <definition></definition>
+	<call>
+		<part type="constant" value="http://musicbrainz.org/ws/1/artist/?name="/>
+		<part type="input" variable="?artistName" separator="+" />
+	</call>
+	<transformation file="mb_getArtistInfoByName.xsl"/>
+</ws>

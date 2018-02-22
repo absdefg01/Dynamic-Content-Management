@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ws>
+	<prefix name="w" value="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+	<prefix name="y" value="http://mpii.de/yago/resource/"/>
+   <headVariables>
+        <variable type="inout" name="?albumId"/>
+        <variable type="output" name="?songName"/>
+        <variable type="output" name="?duration"/>
+    </headVariables>
+	<definition></definition>
+	<call>
+		<part type="constant" value="http://musicbrainz.org/ws/1/track/?releaseid="/>
+		<part type="input" variable="?albumId" separator="+" />
+	</call>
+	<transformation file="mb_getSongsByAlbumId.xsl"/>
+
+</ws>
